@@ -3,10 +3,19 @@
 
 body {
 	margin-top: 85px;
-	background-color:#CCF2EE !important;
+	background-color:#D0ECFF !important;
+}
+
+h2, h3 {
+margin-top: 5px !important;
+margin-bottom: 5px !important;
+}
+
+.panel-heading {
+	background-color: rgb(113, 176, 129);
 }
 
 .navbar-inverse {
-    border-color: #696661;
-    background-color: #696661;
+    border-color: #5E5E58;
+    background-color: #5E5E58;
     }
