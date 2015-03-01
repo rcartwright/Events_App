@@ -3,30 +3,31 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Events</h1>
+<h1 class="text-center">Listing Events</h1>
+
+<%= link_to 'New Event', new_event_path %>
 
 
-
-<div class="panel">
-  <div class="panel-body">
     <% @events.each do |event| %>
-
-        <h2><%= event.event_name %></h2>
-        <p><%= event.date %><%= event.time %></p>
+<div class="panel">
+  <div class="panel-heading"><h3><%= event.event_name %></h3></div>
+  <div class="panel-body">
+        <p><%= event.date.to_formatted_s(:long_ordinal) %> <%= event.time.to_s(:time) %></p>
         <p><%= event.comments %></p>
         <p><%= event.created_by %></p>
 
         <%= link_to 'Show', event %>
         <%= link_to 'Edit', edit_event_path(event) %>
-        <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <hr />
+        <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+      </div>
     <% end %>
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
-</div>
-</div>
+
+
+
 
 </div>
 </div>
