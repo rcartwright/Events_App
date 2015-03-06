@@ -1,7 +1,9 @@
 class CreateBands < ActiveRecord::Migration
   def change
     create_table :bands do |t|
-      t.text :name
+      t.string :band_name
+      t.string :members
+      t.date :date
 
       t.timestamps null: false
     end

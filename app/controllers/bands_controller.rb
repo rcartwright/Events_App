@@ -1,7 +1,7 @@
 class BandsController < ApplicationController
 
   def index
-    @bands = Band.all.sort_by &:name
+    @bands = Band.all.sort_by &:band_name
   end
 
   # GET /events/1
