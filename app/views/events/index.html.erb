@@ -10,9 +10,9 @@
 <br>
     <% @events.each do |event| %>
 <div class="panel">
-  <div class="panel-heading"><h3><%= event.event_name %></h3></div>
+  <div class="panel-heading"><h3><%= event.event_name %> <%= event.date.to_formatted_s(:long_ordinal) %> <%= event.time.to_s(:time) %></h3></div>
   <div class="panel-body">
-        <p><%= event.date.to_formatted_s(:long_ordinal) %> <%= event.time.to_s(:time) %></p>
+
         <p><%= event.comments %></p>
         <p><%= event.created_by %></p>
 
