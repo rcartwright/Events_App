@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :bands
+
   resources :events
 
   # The priority is based upon order of creation: first created -> highest priority.
