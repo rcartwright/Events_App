@@ -25,7 +25,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = Event.new(params[:event])
+    @event = Event.new(event_params)
 
     respond_to do |format|
       if @event.save
