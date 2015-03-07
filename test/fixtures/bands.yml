@@ -1,7 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyText
+  band_name: MyString
+  members: MyString
+  date: 2015-03-06
 
 two:
-  name: MyText
+  band_name: MyString
+  members: MyString
+  date: 2015-03-06
