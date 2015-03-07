@@ -17,6 +17,11 @@
     <%= f.time_select :time %>
     <%= f.text_area :comments %>
     <%= f.text_field :created_by %>
+
+ <%= f.fields_for :bands do |q| %>
+    <%= q.text_field :band_name %>
+  <% end -%>
+
     <%= f.submit %>
 
 <% end %>
