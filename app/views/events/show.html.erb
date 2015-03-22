@@ -24,6 +24,12 @@
   <strong>Created by:</strong>
   <%= @event.created_by %>
 </p>
+  <strong>Band:</strong>
+  <%= @event.bands.count %><br>
+  <%= @event.band_events.exists? %><br>
+  <%= @event.bands.inspect %><br>
+</p>
+
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
