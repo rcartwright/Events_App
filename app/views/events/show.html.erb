@@ -25,9 +25,12 @@
   <%= @event.created_by %>
 </p>
   <strong>Band:</strong>
-  <%= @event.bands.count %><br>
-  <%= @event.band_events.exists? %><br>
-  <%= @event.bands.inspect %><br>
+
+  <% @event.bands.each do |band| %>
+  <%= band.band_name %>
+<% end %>
+
+
 </p>
 
 
