@@ -10,12 +10,16 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @event = Event.find(params[:id])
+    @band = @event.band_events
+    #2nd you retrieve the comment thanks to params[:id]
+
   end
 
   # GET /events/new
   def new
     @event = Event.new
-    @event.bands.build #-> very important
+    @event.band_events.build
   end
 
   # GET /events/1/edit
@@ -25,7 +29,8 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = Event.new(event_params)
+
+     @event = Event.new(event_params)
 
     respond_to do |format|
       if @event.save
@@ -70,7 +75,7 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:event_name, :date, :time, :comments, :created_by, band_attributes: [:id, :band_name])
+      params.require(:event).permit(:event_name, :date, :time, :comments, :created_by, band_events_attributes: [:band_id, :band_name])
   end
 
 end
