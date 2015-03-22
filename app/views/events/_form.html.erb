@@ -18,9 +18,12 @@
     <%= f.text_area :comments %>
     <%= f.text_field :created_by %>
 
- <%= f.fields_for :bands do |q| %>
-    <%= q.text_field :band_name %>
+
+ <%= f.fields_for :band_events do |q| %>
+
+    <%= q.text_field :band_id %>
   <% end -%>
+
 
     <%= f.submit %>
 
