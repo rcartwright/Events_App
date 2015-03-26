@@ -1,5 +1,11 @@
+<div class="row">
+	<div class="col-md-12">
 <p id="notice"><%= notice %></p>
+	</div>
+</div>
 
+<div class="row">
+	<div class="col-md-3">
 <p>
   <strong>Band name:</strong>
   <%= @band.band_name %>
@@ -14,12 +20,29 @@
   <strong>Date:</strong>
   <%= @band.date %>
 </p>
+	</div>
+<div class="col-md-9">
 
  <% @band.events.each do |event| %>
 
-  <p><%= event.event_name %></p>
+
+<div class="panel">
+  <div class="panel-heading"><h3><%= event.event_name %> <%= event.date.to_formatted_s(:long_ordinal) %> <%= event.time.to_s(:time) %></h3></div>
+  <div class="panel-body">
+
+        <p><%= event.comments %></p>
+        <p><%= event.created_by %></p>
+
+        <%= link_to 'Show', event %>
+        <%= link_to 'Edit', edit_event_path(event) %>
+        <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+      </div>
 
 <% end %>
 
 <%= link_to 'Edit', edit_band_path(@band) %> |
 <%= link_to 'Back', bands_path %>
+
+</div>
+</div>
