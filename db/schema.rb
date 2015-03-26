@@ -31,11 +31,6 @@ ActiveRecord::Schema.define(version: 20150307084357) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "bands_events", id: false, force: :cascade do |t|
-    t.integer "band_id",  null: false
-    t.integer "event_id", null: false
-  end
-
   create_table "events", force: :cascade do |t|
     t.string   "event_name"
     t.date     "date"
