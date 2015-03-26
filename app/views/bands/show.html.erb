@@ -15,5 +15,11 @@
   <%= @band.date %>
 </p>
 
+ <% @band.events.each do |event| %>
+
+  <p><%= event.event_name %></p>
+
+<% end %>
+
 <%= link_to 'Edit', edit_band_path(@band) %> |
 <%= link_to 'Back', bands_path %>
